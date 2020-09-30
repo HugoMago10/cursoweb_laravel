@@ -25,7 +25,7 @@ class PaisesController extends Controller
         
         $paises = Paises::where('status',1)->orderBy('nombre')->get();
 
-        return view ('Paises.index')->with('paises',$paises);
+        return view('Paises.index')->with('paises',$paises);
     }
 
     /**

@@ -26,7 +26,10 @@
             <td>
                 <a href="{{'paises/'.$item->id }}">Detalle</a>
                 <a href="{{'paises/'.$item->id.'/edit'}}">Editar</a>
-                <a href="#">Eliminar</a>
+
+                {!! Form::open(['method'=>'delete', 'url'=>'paises/'.$item->id ]) !!}
+                    {!! form::submit('Eliminar') !!}
+                {!! Form::close() !!}
             </td>
         </tr>
         @endforeach
