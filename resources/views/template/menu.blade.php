@@ -9,7 +9,7 @@
         <nav class="nav-menu d-none d-lg-block">
             <ul>
                 <li class="active"><a href="index.html">Inicio</a></li>
-                <li><a href="our-story.html">Our Story</a></li>
+                <li><a href="../paises">Crud Pais</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li class="drop-down"><a href="">Drop Down</a>

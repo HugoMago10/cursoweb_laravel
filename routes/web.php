@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Route::get('/', function () {
+Route::get('/', function () {
     return view('bienvenido');
-}); */
+});
 Route::resource('paises','PaisesController');
 Route::resource('entidades','EntidadesController');
 Route::resource('municipios','MunicipiosController');

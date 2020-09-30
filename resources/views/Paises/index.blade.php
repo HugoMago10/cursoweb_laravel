@@ -35,6 +35,6 @@
         @endforeach
     </table>
     <br>
-    <a href="{{asset('index')}}">Regresar al Index</a>
+    <a href="{{('/')}}">Regresar al Index</a>
 </body>
 </html>
