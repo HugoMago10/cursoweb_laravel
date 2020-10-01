@@ -10,8 +10,8 @@
             <ul>
                 <li class="active"><a href="index.html">Inicio</a></li>
                 <li><a href="../paises">Crud Pais</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="../entidades">Crud Entidades</a></li>
+                <li><a href="../municipios">Crud Municipios</a></li>
                 <li class="drop-down"><a href="">Drop Down</a>
             <ul>
                 <li><a href="#">Drop Down 1</a></li>

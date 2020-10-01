@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Modelos\Entidades;
+use App\Modelos\Paises;
+
 class EntidadesController extends Controller
 {
     /**
@@ -13,7 +16,10 @@ class EntidadesController extends Controller
      */
     public function index()
     {
-        //
+        $entidades = Entidades::where('status',1)
+            ->orderBy('clave_pais')
+            ->orderBy('nombre')->get();
+        return view('Entidades.index')->with('entidades',$entidades);
     }
 
     /**
@@ -23,7 +29,9 @@ class EntidadesController extends Controller
      */
     public function create()
     {
-        //
+        //Lista de paises para precargarlo en un combo
+        $entidades = Paises::select('clave','nombre')->orderBy('nombre')->get();
+        return view('Entidades.create')->with('paises',$entidades);
     }
 
     /**
@@ -34,7 +42,9 @@ class EntidadesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos = $request->all();
+        Entidades::create($datos);
+        return redirect('/entidades');
     }
 
     /**
@@ -45,7 +55,8 @@ class EntidadesController extends Controller
      */
     public function show($id)
     {
-        //
+        $entidad = Entidades::find($id);
+        return view('Entidades.read')->with('entidad',$entidad);
     }
 
     /**
@@ -56,7 +67,9 @@ class EntidadesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $entidad = Entidades::find($id);
+        $pais = Paises::select('clave','nombre')->orderBy('nombre')->get();
+        return view ('Entidades.edit')->with('entidad',$entidad)->with('paises',$pais);
     }
 
     /**
@@ -68,7 +81,10 @@ class EntidadesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datos = $request->all();
+        $entidad = Entidades::find($id);
+        $entidad->update($datos);
+        return redirect('/entidades');
     }
 
     /**
@@ -79,6 +95,9 @@ class EntidadesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $entidad = Entidades::find($id);
+        $entidad->status = 0;
+        $entidad->save();
+        return redirect('/entidades');
     }
 }
