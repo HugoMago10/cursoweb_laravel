@@ -16,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('bienvenido');
 });
+Route::get('home', function () {
+    return view('bienvenido');
+});
+Route::get('bienvenido', function () {
+    return view('bienvenido');
+});
+Route::get('cruds',function(){
+    return view('cruds');
+});
+
 Route::resource('paises','PaisesController');
 Route::resource('entidades','EntidadesController');
 Route::resource('municipios','MunicipiosController');

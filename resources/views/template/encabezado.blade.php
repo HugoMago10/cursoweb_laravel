@@ -9,7 +9,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href='{{ asset("estilos/img/favicon.png") }}' rel="icon">
+    <link href='{{ asset("estilos/img/icon.png") }}' rel="icon">
     <link href='{{ asset("estilos/img/apple-touch-icon.png") }}' rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -23,6 +23,9 @@
     <link href='{{ asset("estilos/vendor/remixicon/remixicon.css") }}' rel="stylesheet">
     <link href='{{ asset("estilos/vendor/owl.carousel/assets/owl.carousel.min.css") }}' rel="stylesheet">
     <link href='{{ asset("estilos/vendor/venobox/venobox.css") }}' rel="stylesheet">
+    
+    <!-- dataTable -->
+    <link rel="stylesheet" type="text/css" href='{{ asset("DataTables/datatables.css") }}'>
 
     <!-- Template Main CSS File -->
     <link href='{{ asset("estilos/css/style.css") }}' rel="stylesheet">
