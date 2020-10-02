@@ -15,6 +15,14 @@ class MDusuario_registrado
      */
     public function handle($request, Closure $next)
     {
+        //$usuarioactual = Session::get('usuarioactual');
+        $usuarioactual=\Auth::user();
+        if ( isset($usuarioactual) ){
+            if ($usuarioactual->id_tipo_usu!=4){
+                return redirect('sin acceso4');
+            }
+        }else
+            return redirect('login');
         return $next($request);
     }
 }

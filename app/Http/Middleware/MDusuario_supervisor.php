@@ -15,6 +15,14 @@ class MDusuario_supervisor
      */
     public function handle($request, Closure $next)
     {
+        //$usuarioactual = Session::get('usuarioactual');
+        $usuarioactual=\Auth::user();
+        if ( isset($usuarioactual) ){
+            if ($usuarioactual->id_tipo_usu!=2){
+                return redirect('sin acceso2');
+            }
+        }else
+            return redirect('login');
         return $next($request);
     }
 }
